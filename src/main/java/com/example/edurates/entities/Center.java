@@ -14,22 +14,22 @@ public class Center {
     private String description;
     private String image;
     @ManyToOne
-    @Column(name = "type_id")
+    @JoinColumn(name = "type_id")
     private Type typeId;
     @ManyToOne
-    @Column(name = "region_id")
+    @JoinColumn(name = "region_id")
     private Region regionId;
     @ManyToOne
-    @Column(name = "language_id")
+    @JoinColumn(name = "language_id")
     private Region languageId;
     @ManyToOne
-    @Column(name = "rating_id")
+    @JoinColumn(name = "rating_id")
     private Region ratingId;
     @ManyToOne
-    @Column(name = "district_id")
+    @JoinColumn(name = "district_id")
     private Region districtId;
     @ManyToOne
-    @Column(name = "staff_id")
+    @JoinColumn(name = "staff_id")
     private Region staffId;
 
     public Center() {
