@@ -1,17 +1,18 @@
 package com.example.edurates.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Table(name = "center_rating")
 @Entity
-public class CenterRating {
+public class CenterRating implements Serializable {
 
     @Id
     @ManyToOne
-    @Column(name = "center_id")
+    @JoinColumn(name = "center_id")
     private Center centerId;
     @ManyToOne
-    @Column(name = "rating_id")
+    @JoinColumn(name = "rating_id")
     private Rating ratingId;
 
     public CenterRating() {
