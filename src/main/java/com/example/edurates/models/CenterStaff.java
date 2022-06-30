@@ -1,4 +1,4 @@
-package com.example.edurates.entities;
+package com.example.edurates.models;
 
 import javax.persistence.*;
 import java.io.Serializable;

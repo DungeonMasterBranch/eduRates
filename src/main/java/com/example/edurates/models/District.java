@@ -1,25 +1,25 @@
-package com.example.edurates.entities;
+package com.example.edurates.models;
 
 import javax.persistence.*;
 
-@Table(name = "language")
+@Table(name = "district")
 @Entity
-public class Language {
+public class District {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
 
-    public Language() {
+    public District() {
     }
 
-    public Language(Long id, String name) {
+    public District(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Language(String name) {
+    public District(String name) {
         this.name = name;
     }
 
@@ -41,7 +41,7 @@ public class Language {
 
     @Override
     public String toString() {
-        return "Language{" +
+        return "District{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

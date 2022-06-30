@@ -1,26 +1,31 @@
-package com.example.edurates.entities;
+package com.example.edurates.models;
 
 import javax.persistence.*;
 
-@Table(name = "district")
+@Table(name = "region")
 @Entity
-public class District {
+public class Region {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    @ManyToOne
+    @JoinColumn(name = "district_id")
+    private District district;
 
-    public District() {
+    public Region() {
     }
 
-    public District(Long id, String name) {
+    public Region(Long id, String name, District district) {
         this.id = id;
         this.name = name;
+        this.district = district;
     }
 
-    public District(String name) {
+    public Region(String name, District district) {
         this.name = name;
+        this.district = district;
     }
 
     public Long getId() {
@@ -39,11 +44,20 @@ public class District {
         this.name = name;
     }
 
+    public District getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(District district) {
+        this.district = district;
+    }
+
     @Override
     public String toString() {
-        return "District{" +
+        return "Region{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", district=" + district +
                 '}';
     }
 }

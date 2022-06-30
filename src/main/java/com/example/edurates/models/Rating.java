@@ -1,26 +1,29 @@
-package com.example.edurates.entities;
+package com.example.edurates.models;
 
 import javax.persistence.*;
 
-@Table(name = "type")
+@Table(name = "rating")
 @Entity
-public class Type {
+public class Rating {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+    private Double score;
 
-    public Type() {
+    public Rating() {
     }
 
-    public Type(Long id, String name) {
+    public Rating(Long id, String name, Double score) {
         this.id = id;
         this.name = name;
+        this.score = score;
     }
 
-    public Type(String name) {
+    public Rating(String name, Double score) {
         this.name = name;
+        this.score = score;
     }
 
     public Long getId() {
@@ -39,11 +42,20 @@ public class Type {
         this.name = name;
     }
 
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
     @Override
     public String toString() {
-        return "Type{" +
+        return "Rating{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", score=" + score +
                 '}';
     }
 }
